@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Estilos con Sliders e input</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .inputs {
+            flex: 0 0 250px;
+            padding: 20px;
+        }
+
+        .inputs label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .inputs input[type="range"],
+        .inputs input[type="color"] {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        .caja {
+            flex: 1;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #caja {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(192, 108, 248);
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inputs">
+            <h1>Cajitaa</h1>
+            <label for="ancho">Ancho:</label>
+            <input type="range" id="ancho" min="50" max="500" value="150">
+            <span id="anchoValor">150px</span>
+
+            <label for="alto">Alto:</label>
+            <input type="range" id="alto" min="50" max="500" value="150">
+            <span id="altoValor">150px</span>
+
+            <label for="radio">Radio:</label>
+            <input type="range" id="radio" min="0" max="100" value="10">
+            <span id="radioValor">10px</span>
+
+            <label for="sombraX">Sombra Derecha:</label>
+            <input type="range" id="sombraX" min="0" max="50" value="5">
+            <span id="sombraXValor">5px</span>
+
+            <label for="sombraY">Sombra Abajo:</label>
+            <input type="range" id="sombraY" min="0" max="50" value="5">
+            <span id="sombraYValor">5px</span>
+
+            <label for="colorSombra">Color de Sombra:</label>
+            <input type="color" id="colorSombra" value="#000000">
+            <span id="colorSombraValor">#000000</span>
+
+            <label for="colorCaja">Color de Caja:</label>
+            <input type="color" id="colorCaja" value="#c048f8">
+            <span id="colorCajaValor">#c048f8</span>
+        </div>
+
+        <div class="caja">
+            <div id="caja"></div>
+        </div>
+    </div>
+    <script>
+        const caja = document.getElementById('caja');
+
+        // Función para actualizar el tamaño y estilo de la caja
+        function actualizarCaja() {
+            const ancho = document.getElementById('ancho').value;
+            const alto = document.getElementById('alto').value;
+            const radio = document.getElementById('radio').value;
+            const sombraX = document.getElementById('sombraX').value;
+            const sombraY = document.getElementById('sombraY').value;
+            const colorSombra = document.getElementById('colorSombra').value;
+            const colorCaja = document.getElementById('colorCaja').value;
+
+            caja.style.width = `${ancho}px`;
+            caja.style.height = `${alto}px`;
+            caja.style.borderRadius = `${radio}px`;
+            caja.style.boxShadow = `${sombraX}px ${sombraY}px 15px ${colorSombra}`;
+            caja.style.backgroundColor = colorCaja;
+
+            document.getElementById('anchoValor').innerText = `${ancho}px`;
+            document.getElementById('altoValor').innerText = `${alto}px`;
+            document.getElementById('radioValor').innerText = `${radio}px`;
+            document.getElementById('sombraXValor').innerText = `${sombraX}px`;
+            document.getElementById('sombraYValor').innerText = `${sombraY}px`;
+            document.getElementById('colorSombraValor').innerText = colorSombra;
+            document.getElementById('colorCajaValor').innerText = colorCaja;
+        }
+
+        // Agregar eventos a los inputs
+        document.querySelectorAll('.inputs input').forEach(input => {
+            input.addEventListener('input', actualizarCaja);
+        });
+
+        // Llamar a la función para cargar la página
+        actualizarCaja();
+    </script>
+</body>
+</html>
