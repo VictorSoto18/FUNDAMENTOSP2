@@ -6,36 +6,33 @@
     <title>Control de Estilos con Sliders e input</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            place-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #f0f0f0; /* Fondo claro */
         }
-
         .container {
             display: flex;
             width: 80%;
             max-width: 800px;
         }
-
         .inputs {
             flex: 0 0 250px;
             padding: 20px;
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-
         .inputs label {
             display: block;
             margin: 10px 0;
+            color: white;
         }
-
-        .inputs input[type="range"],
-        .inputs input[type="color"] {
+        .inputs input[type="range"], .inputs input[type="color"] {
             width: 100%;
             margin: 5px 0;
         }
-
         .caja {
             flex: 1;
             margin-left: 20px;
@@ -43,7 +40,6 @@
             justify-content: center;
             align-items: center;
         }
-
         #caja {
             width: 150px;
             height: 150px;
@@ -51,41 +47,60 @@
             border-radius: 10px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
         }
+        .regresar-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #DDA0DD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .regresar-btn:hover {
+            background-color: darkviolet;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
+    <button class="regresar-btn" onclick="location.href='../index.html'">REGRESAR A LA PRINCIPAL</button>
     <div class="container">
         <div class="inputs">
-            <h1>Cajitaa</h1>
+            <h1 style="color: white;">Cajitaa</h1>
             <label for="ancho">Ancho:</label>
             <input type="range" id="ancho" min="50" max="500" value="150">
             <span id="anchoValor">150px</span>
-
+            
             <label for="alto">Alto:</label>
             <input type="range" id="alto" min="50" max="500" value="150">
             <span id="altoValor">150px</span>
-
+            
             <label for="radio">Radio:</label>
             <input type="range" id="radio" min="0" max="100" value="10">
             <span id="radioValor">10px</span>
-
+            
             <label for="sombraX">Sombra Derecha:</label>
             <input type="range" id="sombraX" min="0" max="50" value="5">
             <span id="sombraXValor">5px</span>
-
+            
             <label for="sombraY">Sombra Abajo:</label>
             <input type="range" id="sombraY" min="0" max="50" value="5">
             <span id="sombraYValor">5px</span>
-
+            
             <label for="colorSombra">Color de Sombra:</label>
             <input type="color" id="colorSombra" value="#000000">
             <span id="colorSombraValor">#000000</span>
-
+            
             <label for="colorCaja">Color de Caja:</label>
             <input type="color" id="colorCaja" value="#c048f8">
             <span id="colorCajaValor">#c048f8</span>
         </div>
-
+        
         <div class="caja">
             <div id="caja"></div>
         </div>
@@ -93,7 +108,6 @@
     <script>
         const caja = document.getElementById('caja');
 
-        // Función para actualizar el tamaño y estilo de la caja
         function actualizarCaja() {
             const ancho = document.getElementById('ancho').value;
             const alto = document.getElementById('alto').value;
@@ -118,12 +132,10 @@
             document.getElementById('colorCajaValor').innerText = colorCaja;
         }
 
-        // Agregar eventos a los inputs
         document.querySelectorAll('.inputs input').forEach(input => {
             input.addEventListener('input', actualizarCaja);
         });
 
-        // Llamar a la función para cargar la página
         actualizarCaja();
     </script>
 </body>

@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Colors</title>
+    <title>Dibujo con Canvas</title>
     <style>
         body {
-            width: 100vw;
-            height: 100vh;
+            margin: 0;
+            padding: 0;
             display: grid;
             place-items: center;
-            margin: 0;
-            position: relative;
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
             background-color: black;
+            color: white;
+            position: relative;
         }
-        .regresar-btn {
+        #lienzo {
+            background-color: rgb(131, 129, 144);
+        }
+        button {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -28,30 +35,18 @@
             transition: background-color 0.3s, transform 0.2s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        .regresar-btn:hover {
+        button:hover {
             background-color: darkviolet;
             transform: translateY(-2px);
-        }
-        #btnChange {
-            margin-top: 20px;
-            background-color: #6A5ACD;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        #btnChange:hover {
-            background-color: #483D8B;
         }
     </style>
 </head>
 <body>
-    <button class="regresar-btn" onclick="location.href='../index.html'">REGRESAR A LA PRINCIPAL</button>
-    <button id="btnChange">Cambiar Color</button>
+    <div class="container">
+        <h1>Bolita que Rebota</h1>
+        <canvas id="lienzo" width="600" height="400"></canvas>
+    </div>
+    <button onclick="location.href='../index.html'">REGRESAR A LA PRINCIPAL</button>
     <script src="./app.js"></script>
 </body>
 </html>

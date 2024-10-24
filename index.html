@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JavaScript PARCIAL 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #70627fcd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .parent {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 80vw;
+            height: 80vh;
+            background-color: #120c11;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b998d3;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h1>FUNDAMENTOS JavaScript P2</h1>
+        <div class="button-container">
+            <button onclick="location.href='colorsbg/index.html'">ColoresBG</button>
+            <button onclick="location.href='Controladores/des.html'">CONTROLADORES 🛠️</button>
+            <button onclick="location.href='animado/index.html'">CUADRO DE COLORES 🖍️</button>
+            <button onclick="location.href='dibujosjs/index.html'">DIBUJO 🖼️</button>
+            <button onclick="location.href='rebota/index.html'">BOLITA 🥎</button>
+            <button onclick="location.href='todoapp/index.html'">APP TAREAS</button>
+            <button onclick="location.href='game/index.html'">GAME 🕹️</button>
+        </div>
+    </div>
+</body>
+</html>

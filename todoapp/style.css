@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(204, 153, 255); /* Morado claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    border: 5px solid rgba(255, 255, 255, 0.8); 
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.alert {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    justify-content: space-around;
+    display: flex;
+}
+
+.red {
+    border: 2px solid red;
+    background-color: rgb(240, 165, 165);
+}
+
+.yellow {
+    border: 2px solid rgb(246, 246, 21);
+    background-color: rgb(243, 243, 173);
+}
+
+.green {
+    border: 2px solid green;
+    background-color: rgb(179, 238, 179);
+}
+
+
+button {
+    background-color: rgb(179, 153, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(153, 128, 255);
+}
+
